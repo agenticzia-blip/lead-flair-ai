@@ -76,8 +76,22 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Trusted By */}
+      <section className="border-y border-border">
+        <div className="container py-10">
+          <p className="text-center text-xs font-semibold tracking-widest uppercase text-primary mb-6">
+            Trusted by Innovative Companies
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-muted-foreground">
+            {["ZAPIER", "BOLT", "STACKBLITZ", "TOPVIEW AI", "BASE44", "LOVABLE"].map((name) => (
+              <span key={name} className="text-sm font-semibold tracking-wider opacity-50">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
-      <section className="border-y border-border bg-card/50">
+      <section className="bg-muted">
         <div className="container py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -89,7 +103,7 @@ const Index = () => {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
