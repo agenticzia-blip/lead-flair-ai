@@ -4,7 +4,6 @@ import { Phone, UserCheck, CalendarCheck, RefreshCw, Zap, Shield, TrendingUp, Ar
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
   {
