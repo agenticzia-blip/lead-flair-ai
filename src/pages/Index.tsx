@@ -44,18 +44,18 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden hero-bg">
-        <div className="container relative z-10 py-24 md:py-40">
+        <div className="container relative z-10 py-28 md:py-44 lg:py-52">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-tight mb-6">
-              Scale Your Business with{" "}
-              <span className="text-gradient">AI-Driven Funnels</span>
+            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-foreground leading-[1.1] mb-6">
+              Scale Your Business with<br />
+              AI-Driven Funnels
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
               Leverage AI to streamline your processes, automate outreach, and drive exponential growth without increasing headcount.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
