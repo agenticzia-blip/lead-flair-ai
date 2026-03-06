@@ -4,7 +4,6 @@ import { Phone, UserCheck, CalendarCheck, RefreshCw, Zap, Shield, TrendingUp, Ar
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const services = [
   {
@@ -45,11 +44,6 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden hero-bg">
-        <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-        </div>
-
         <div className="container relative z-10 py-24 md:py-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -57,36 +51,47 @@ const Index = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase rounded-full bg-primary/10 text-primary border border-primary/20">
-              AI-Powered Growth
-            </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-tight mb-6">
               Scale Your Business with{" "}
               <span className="text-gradient">AI-Driven Funnels</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
-              Leverage AI to streamline your processes and drive exponential growth. Automate lead generation, calling, and appointments.
+              Leverage AI to streamline your processes, automate outreach, and drive exponential growth without increasing headcount.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity text-center"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity text-center"
               >
-                Book a Free Consultation
+                Book a Free Consultation <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/solutions"
                 className="px-8 py-4 rounded-lg font-semibold border border-border text-foreground hover:bg-secondary transition-colors text-center"
               >
-                Explore Solutions
+                Watch Demo
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
+      {/* Trusted By */}
+      <section className="border-y border-border">
+        <div className="container py-10">
+          <p className="text-center text-xs font-semibold tracking-widest uppercase text-primary mb-6">
+            Trusted by Innovative Companies
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-muted-foreground">
+            {["ZAPIER", "BOLT", "STACKBLITZ", "TOPVIEW AI", "BASE44", "LOVABLE"].map((name) => (
+              <span key={name} className="text-sm font-semibold tracking-wider opacity-50">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
-      <section className="border-y border-border bg-card/50">
+      <section className="bg-muted">
         <div className="container py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -98,7 +103,7 @@ const Index = () => {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
