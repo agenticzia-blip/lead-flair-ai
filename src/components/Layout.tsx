@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoIcon from "@/assets/logo-icon.png";
+
+const serviceLinks = [
+  { label: "AI Lead Reactivation", path: "/services/lead-reactivation" },
+  { label: "AI Cold Calling", path: "/services/cold-calling" },
+  { label: "AI Receptionist", path: "/services/receptionist" },
+  { label: "AI Appointment Setters", path: "/services/appointment-setters" },
+];
 
 const navLinks = [
   { label: "Home", path: "/" },
