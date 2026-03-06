@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoIcon from "@/assets/logo-icon.png";
+
+const serviceLinks = [
+  { label: "AI Lead Reactivation", path: "/services/lead-reactivation" },
+  { label: "AI Cold Calling", path: "/services/cold-calling" },
+  { label: "AI Receptionist", path: "/services/receptionist" },
+  { label: "AI Appointment Setters", path: "/services/appointment-setters" },
+];
 
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Solutions", path: "/solutions" },
+  { label: "Services", path: "/solutions", hasDropdown: true },
   { label: "Pricing", path: "/pricing" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
@@ -29,22 +36,41 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.path ? "text-primary" : "text-muted-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.hasDropdown ? (
+                <div key={link.path} className="relative group">
+                  <button className={`inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-foreground ${
+                    location.pathname.startsWith("/services") || location.pathname === "/solutions" ? "text-foreground" : "text-muted-foreground"
+                  }`}>
+                    {link.label} <ChevronDown className="w-3.5 h-3.5" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="w-56 rounded-lg border border-border bg-background shadow-lg py-2">
+                      {serviceLinks.map((s) => (
+                        <Link key={s.path} to={s.path} className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors hover:text-foreground ${
+                    location.pathname === link.path ? "text-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <Link
               to="/contact"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
             >
-              Book a Call
+              Get Started
             </Link>
           </nav>
 
