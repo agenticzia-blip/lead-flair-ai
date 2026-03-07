@@ -44,7 +44,7 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden hero-bg">
-        <div className="container relative z-10 py-28 md:py-44 lg:py-52">
+        <div className="container relative z-10 py-16 md:py-24 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
