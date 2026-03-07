@@ -58,8 +58,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium px-4 py-2 transition-colors hover:text-primary ${
-                    location.pathname === link.path ? "text-primary" : "text-muted-foreground"
+                  className={`text-[15px] font-semibold px-4 py-2 transition-colors hover:text-primary ${
+                     location.pathname === link.path ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
                   {link.label}
