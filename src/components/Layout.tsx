@@ -39,7 +39,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {navLinks.map((link) =>
               link.hasDropdown ? (
                 <div key={link.path} className="relative group">
-                  <button className={`inline-flex items-center gap-1 text-[15px] font-semibold px-4 py-2 transition-colors hover:text-primary ${
+                  <button className={`inline-flex items-center gap-1 text-sm font-medium px-4 py-2 transition-colors hover:text-primary ${
                      location.pathname.startsWith("/services") || location.pathname === "/solutions" ? "text-foreground" : "text-muted-foreground"
                    }`}>
                     {link.label} <ChevronDown className="w-3.5 h-3.5" />
@@ -58,7 +58,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-[15px] font-semibold px-4 py-2 transition-colors hover:text-primary ${
+                  className={`text-sm font-medium px-4 py-2 transition-colors hover:text-primary ${
                      location.pathname === link.path ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
