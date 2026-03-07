@@ -28,26 +28,26 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="min-h-screen flex flex-col bg-background">
       {/* Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-xl">
-        <div className="container flex items-center justify-between h-16 md:h-20">
+        <div className="container flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <img src={logoIcon} alt="Appoint Funnels" className="h-8 w-8" />
             <span className="text-lg font-display font-bold text-gradient">Appoint Funnels</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) =>
               link.hasDropdown ? (
                 <div key={link.path} className="relative group">
-                  <button className={`inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-foreground ${
-                    location.pathname.startsWith("/services") || location.pathname === "/solutions" ? "text-foreground" : "text-muted-foreground"
+                  <button className={`inline-flex items-center gap-1 text-sm font-medium px-4 py-2 transition-colors hover:text-primary ${
+                    location.pathname.startsWith("/services") || location.pathname === "/solutions" ? "text-primary" : "text-muted-foreground"
                   }`}>
                     {link.label} <ChevronDown className="w-3.5 h-3.5" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="w-56 rounded-lg border border-border bg-background shadow-lg py-2">
                       {serviceLinks.map((s) => (
-                        <Link key={s.path} to={s.path} className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+                        <Link key={s.path} to={s.path} className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-muted transition-colors">
                           {s.label}
                         </Link>
                       ))}
@@ -58,8 +58,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-foreground ${
-                    location.pathname === link.path ? "text-foreground" : "text-muted-foreground"
+                  className={`text-sm font-medium px-4 py-2 transition-colors hover:text-primary ${
+                    location.pathname === link.path ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {link.label}
@@ -68,7 +68,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             )}
             <Link
               to="/contact"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
             >
               Get Started
             </Link>
