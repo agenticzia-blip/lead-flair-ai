@@ -116,7 +116,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </header>
 
       {/* Main */}
-      <main className="flex-1 pt-16 md:pt-20">{children}</main>
+      <main className="flex-1 pt-16">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-border bg-card">
