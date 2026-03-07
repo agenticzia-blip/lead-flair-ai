@@ -51,7 +51,7 @@ const Index = () => {
             transition={{ duration: 0.7 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-foreground leading-[1.1] mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-[4.5rem] font-display font-black text-foreground leading-[1.1] mb-6">
               Scale Your Business with<br />
               AI-Driven Funnels
             </h1>
