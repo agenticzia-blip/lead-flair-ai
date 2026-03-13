@@ -68,7 +68,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             )}
             <Link
               to="/contact"
-              className="px-4 py-2 rounded-lg text-sm font-medium bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
+              className="px-4 py-2 rounded-lg text-sm font-medium bg-logo-blue text-white hover:opacity-90 transition-opacity"
             >
               Get Started
             </Link>
