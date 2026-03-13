@@ -124,7 +124,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <Link to="/" className="flex items-center gap-2">
-                <img src={logoIcon} alt="Appoint Funnels" className="h-12 w-12" />
+                <img src={logoIcon} alt="Appoint Funnels" className="h-16 w-16" />
                 <span className="text-lg font-display font-bold text-gradient">Appoint Funnels</span>
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed">
