@@ -13,26 +13,8 @@ const values = [
 
 const About = () => (
   <Layout>
-    <section className="py-20 md:py-28">
-      <div className="container">
-        <SectionHeading
-          label="About Us"
-          title="Helping Businesses Scale with AI"
-          description="Appoint Funnels was founded with a single mission: to help businesses leverage cutting-edge AI tools that automate and optimize customer acquisition processes."
-        />
-        <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-            We believe that every business, regardless of size, should have access to the same powerful AI tools that Fortune 500 companies use. Our suite of services — from lead reactivation to AI-powered appointment setting — are designed to eliminate manual bottlenecks and supercharge your sales pipeline.
-          </motion.p>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            Our team of AI specialists, sales strategists, and engineers work together to build solutions that don't just automate — they optimize. We continuously refine our systems to deliver better results, more conversions, and higher ROI for our clients.
-          </motion.p>
-        </div>
-      </div>
-    </section>
-
     {/* CEO Section */}
-    <section className="py-20 md:py-28 bg-card/50 border-y border-border">
+    <section className="py-20 md:py-28">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <motion.div
@@ -43,7 +25,7 @@ const About = () => (
           >
             <div className="rounded-2xl overflow-hidden border border-border shadow-lg max-w-sm mx-auto">
               <img src={ceoPhoto} alt="Ziauddin Shah - Founder & CEO" className="w-full aspect-square object-cover" />
-              <div className="bg-logo-blue text-white text-center py-3 font-display font-semibold">
+              <div className="bg-black text-white text-center py-3 font-display font-semibold">
                 Founder & CEO
               </div>
             </div>
@@ -63,6 +45,25 @@ const About = () => (
               <p>"I'm passionate about helping entrepreneurs and business owners scale their operations without the overwhelming complexity. Let's build something amazing together."</p>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* About Us Section */}
+    <section className="py-20 md:py-28 bg-card/50 border-y border-border">
+      <div className="container">
+        <SectionHeading
+          label="About Us"
+          title="Helping Businesses Scale with AI"
+          description="Appoint Funnels was founded with a single mission: to help businesses leverage cutting-edge AI tools that automate and optimize customer acquisition processes."
+        />
+        <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+            We believe that every business, regardless of size, should have access to the same powerful AI tools that Fortune 500 companies use. Our suite of services — from lead reactivation to AI-powered appointment setting — are designed to eliminate manual bottlenecks and supercharge your sales pipeline.
+          </motion.p>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            Our team of AI specialists, sales strategists, and engineers work together to build solutions that don't just automate — they optimize. We continuously refine our systems to deliver better results, more conversions, and higher ROI for our clients.
+          </motion.p>
         </div>
       </div>
     </section>
