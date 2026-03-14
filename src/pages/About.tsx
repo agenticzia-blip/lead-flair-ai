@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Users, Lightbulb, Award } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import ceoPhoto from "@/assets/ceo-photo.png";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "We measure success by the growth we deliver to our clients." },
