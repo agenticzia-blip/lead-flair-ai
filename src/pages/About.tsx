@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Users, Lightbulb, Award } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import ceoPhoto from "@/assets/ceo-photo.png";
 
 const values = [
   { icon: Target, title: "Results-Driven", desc: "We measure success by the growth we deliver to our clients." },
@@ -26,6 +27,42 @@ const About = () => (
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             Our team of AI specialists, sales strategists, and engineers work together to build solutions that don't just automate — they optimize. We continuously refine our systems to deliver better results, more conversions, and higher ROI for our clients.
           </motion.p>
+        </div>
+      </div>
+    </section>
+
+    {/* CEO Section */}
+    <section className="py-20 md:py-28 bg-card/50 border-y border-border">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="rounded-2xl overflow-hidden border border-border shadow-lg max-w-sm mx-auto">
+              <img src={ceoPhoto} alt="Ziauddin Shah - Founder & CEO" className="w-full aspect-square object-cover" />
+              <div className="bg-logo-blue text-white text-center py-3 font-display font-semibold">
+                Founder & CEO
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">Ziauddin Shah</h2>
+            <p className="text-lg font-semibold text-muted-foreground">Founder & CEO</p>
+            <div className="space-y-4 text-muted-foreground leading-relaxed italic">
+              <p>"My journey into AI-driven business solutions started with a simple belief: every business, regardless of size, deserves access to cutting-edge technology that can transform their growth trajectory."</p>
+              <p>"At Appoint Funnels, we're not just building AI tools—we're creating opportunities. Our mission is to democratize AI technology and make it accessible, affordable, and effective for businesses worldwide."</p>
+              <p>"I'm passionate about helping entrepreneurs and business owners scale their operations without the overwhelming complexity. Let's build something amazing together."</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
