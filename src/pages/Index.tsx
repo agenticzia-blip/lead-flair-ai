@@ -30,6 +30,12 @@ const services = [
     description: "Our AI appointment setters book meetings with your leads, freeing up your time and ensuring no opportunities are missed.",
     link: "/services/appointment-setters",
   },
+  {
+    icon: Target,
+    title: "AI Sales System",
+    description: "End-to-end outbound engine — scrape leads, personalize outreach, verify data, and launch campaigns automatically.",
+    link: "/services/sales-system",
+  },
 ];
 
 const stats = [
