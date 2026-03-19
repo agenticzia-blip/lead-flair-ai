@@ -10,6 +10,7 @@ const serviceLinks = [
   { label: "AI Receptionist", path: "/services/receptionist" },
   { label: "AI Appointment Setters", path: "/services/appointment-setters" },
   { label: "AI Sales System", path: "/services/sales-system" },
+  { label: "Ads + AI Appointment Setter", path: "/services/ads-appointment-setters" },
 ];
 
 const navLinks = [
