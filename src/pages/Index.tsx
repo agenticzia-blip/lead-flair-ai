@@ -5,6 +5,12 @@ import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shi
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const services = [
   {
@@ -236,6 +242,52 @@ const Index = () => {
                 style={{ width: "100%", height: "100%", minHeight: 600, overflow: "auto" }}
               />
             </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* FAQ Section */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <SectionHeading
+            label="FAQ"
+            title="Frequently Asked Questions"
+            description="Everything you need to know about our AI-powered solutions."
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="space-y-3">
+              {[
+                { q: "What is Appoint Funnels?", a: "Appoint Funnels is an AI-powered business growth platform that automates lead generation, appointment setting, cold calling, and customer engagement — so you can scale faster without adding headcount." },
+                { q: "How does the AI Appointment Setter work?", a: "Our AI engages your leads across email, SMS, and chat, finds mutually convenient times, sends confirmations and reminders, and handles rescheduling — all automatically." },
+                { q: "What industries do you serve?", a: "We work with businesses across healthcare, real estate, financial services, SaaS, professional services, and more. If your business relies on appointments or lead conversion, our AI solutions can help." },
+                { q: "How quickly can I get started?", a: "Most clients are fully onboarded within 48–72 hours. Our team handles the setup, integration, and training so you can start seeing results fast." },
+                { q: "Do I need any technical knowledge?", a: "Not at all. Our solutions are fully managed — we handle the technical side so you can focus on running your business." },
+                { q: "Can the AI integrate with my existing CRM?", a: "Yes! We integrate with all major CRMs including Salesforce, HubSpot, GoHighLevel, Zoho, and more." },
+                { q: "What kind of ROI can I expect?", a: "Our clients typically see a 300% average ROI increase, with 10x faster lead response times and significant reductions in customer acquisition costs." },
+                { q: "Is there a free trial or consultation?", a: "Yes — we offer a free 30-minute strategy consultation where we'll analyze your current sales process and show you exactly how AI can help." },
+              ].map((faq, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05, duration: 0.4 }}
+                >
+                  <AccordionItem value={`item-${i}`} className="rounded-xl border border-border bg-card px-5">
+                    <AccordionTrigger className="text-left font-display font-semibold text-foreground hover:no-underline">
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
           </motion.div>
         </div>
       </section>
