@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/services/cold-calling" element={<ColdCalling />} />
           <Route path="/services/receptionist" element={<Receptionist />} />
           <Route path="/services/appointment-setters" element={<AppointmentSetters />} />
+          <Route path="/services/sales-system" element={<SalesSystem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
