@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -35,6 +35,12 @@ const services = [
     title: "AI Sales System",
     description: "End-to-end outbound engine — scrape leads, personalize outreach, verify data, and launch campaigns automatically.",
     link: "/services/sales-system",
+  },
+  {
+    icon: Megaphone,
+    title: "Ads + AI Appointment Setter",
+    description: "Run targeted ads and let AI instantly qualify leads and book appointments into your calendar.",
+    link: "/services/ads-appointment-setters",
   },
 ];
 
