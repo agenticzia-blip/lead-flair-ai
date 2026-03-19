@@ -20,6 +20,7 @@ const navLinks = [
   { label: "Pricing", path: "/pricing" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
+  { label: "FAQ", path: "/faq" },
 ];
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
