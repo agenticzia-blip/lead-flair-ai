@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Linkedin, Twitter } from "lucide-react";
+import Cal from "@calcom/embed-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/hooks/use-toast";
@@ -108,18 +109,33 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
-              <div className="p-6 rounded-xl bg-card border border-primary/20 glow-border">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-2">Book a Free Consultation</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Prefer a live conversation? Schedule a 30-minute strategy call with our team.
-                </p>
-                <a href="https://cal.com/zia-consult-ai/appointfunnels" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-                  Schedule a Call
-                </a>
-              </div>
             </motion.div>
           </div>
+
+          {/* Embedded Cal.com Calendar */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 max-w-5xl mx-auto"
+          >
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground text-center mb-2">
+              Book a Free Consultation
+            </h2>
+            <p className="text-muted-foreground text-center mb-8">
+              Pick a date and time that works for you — we'll handle the rest.
+            </p>
+            <div className="rounded-xl border border-border bg-card overflow-hidden" style={{ minHeight: 500 }}>
+              <Cal
+                calLink="zia-consult-ai/appointfunnels"
+                config={{
+                  layout: "month_view",
+                  theme: "dark",
+                }}
+                style={{ width: "100%", height: "100%", minHeight: 500, overflow: "auto" }}
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
