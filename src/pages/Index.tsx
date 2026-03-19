@@ -11,7 +11,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import ServiceCard from "@/components/ServiceCard";
 
 const services = [
   {
