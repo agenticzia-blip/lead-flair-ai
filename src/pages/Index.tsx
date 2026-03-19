@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Cal from "@calcom/embed-react";
 import { motion } from "framer-motion";
 import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -209,7 +210,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA with Embedded Calendar */}
       <section className="py-20 md:py-28">
         <div className="container">
           <motion.div
@@ -217,20 +218,24 @@ const Index = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
-            className="max-w-3xl mx-auto text-center p-12 rounded-2xl border border-primary/20 glow-border bg-card"
+            className="max-w-5xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10">
               Schedule a free consultation and discover how AI can 10x your customer acquisition.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Get Started Now <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="rounded-2xl border border-primary/20 glow-border bg-card overflow-hidden" style={{ minHeight: 600 }}>
+              <Cal
+                calLink="zia-consult-ai/appointfunnels"
+                config={{
+                  layout: "month_view",
+                  theme: "dark",
+                }}
+                style={{ width: "100%", height: "100%", minHeight: 600, overflow: "auto" }}
+              />
+            </div>
           </motion.div>
         </div>
       </section>
