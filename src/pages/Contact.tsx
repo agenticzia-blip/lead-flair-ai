@@ -114,9 +114,9 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Prefer a live conversation? Schedule a 30-minute strategy call with our team.
                 </p>
-                <button className="px-6 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
+                <a href="https://cal.com/zia-consult-ai/appointfunnels" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
                   Schedule a Call
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>
