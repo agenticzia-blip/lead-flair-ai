@@ -45,36 +45,50 @@ const Solutions = () => (
           description="See how businesses in different industries leverage our AI solutions to drive growth."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {useCases.map((uc, i) => (
-            <motion.div
-              key={uc.industry}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-xl bg-card border border-border text-center card-hover"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <uc.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">{uc.industry}</h3>
-              <p className="text-sm text-muted-foreground">{uc.desc}</p>
-            </motion.div>
-          ))}
+          {useCases.map((uc, i) => {
+            const directions = [
+              { x: -40, y: 0 },
+              { x: 0, y: 40 },
+              { x: 40, y: 0 },
+            ];
+            return (
+              <motion.div
+                key={uc.industry}
+                initial={{ opacity: 0, ...directions[i] }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="p-6 rounded-xl bg-card border border-border text-center card-hover"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <uc.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">{uc.industry}</h3>
+                <p className="text-sm text-muted-foreground">{uc.desc}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
 
     <section className="py-20 md:py-28">
       <div className="container text-center">
-        <h2 className="text-3xl font-display font-bold text-foreground mb-4">Not Sure Which Solution is Right?</h2>
-        <p className="text-muted-foreground mb-8">Let's chat. We'll help you find the perfect AI solution for your business.</p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
         >
-          Book a Free Consultation
-        </Link>
+          <h2 className="text-3xl font-display font-bold text-foreground mb-4">Not Sure Which Solution is Right?</h2>
+          <p className="text-muted-foreground mb-8">Let's chat. We'll help you find the perfect AI solution for your business.</p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Book a Free Consultation
+          </Link>
+        </motion.div>
       </div>
     </section>
   </Layout>

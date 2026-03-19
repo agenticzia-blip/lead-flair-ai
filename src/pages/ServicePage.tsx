@@ -18,18 +18,43 @@ const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howIt
     {/* Hero */}
     <section className="py-20 md:py-28 hero-bg">
       <div className="container">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-            <Icon className="w-7 h-7 text-primary" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">{title}</h1>
-          <p className="text-xl text-muted-foreground mb-8">{subtitle}</p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6"
           >
-            Get Started <ArrowRight className="w-4 h-4" />
-          </Link>
+            <Icon className="w-7 h-7 text-primary" />
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4"
+          >
+            {title}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="text-xl text-muted-foreground mb-8"
+          >
+            {subtitle}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              Get Started <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -37,28 +62,52 @@ const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howIt
     {/* Description */}
     <section className="py-20">
       <div className="container max-w-3xl">
-        <p className="text-lg text-muted-foreground leading-relaxed">{description}</p>
+        <motion.p
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-lg text-muted-foreground leading-relaxed"
+        >
+          {description}
+        </motion.p>
       </div>
     </section>
 
     {/* Benefits */}
     <section className="py-20 bg-card/50 border-y border-border">
       <div className="container">
-        <h2 className="text-3xl font-display font-bold text-foreground mb-10 text-center">Key Benefits</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-display font-bold text-foreground mb-10 text-center"
+        >
+          Key Benefits
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {benefits.map((benefit, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-3 p-5 rounded-xl bg-card border border-border"
-            >
-              <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-foreground">{benefit}</p>
-            </motion.div>
-          ))}
+          {benefits.map((benefit, i) => {
+            const directions = [
+              { x: -30, y: 0 },
+              { x: 0, y: 30 },
+              { x: 30, y: 0 },
+            ];
+            const dir = directions[i % 3];
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, ...dir }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-start gap-3 p-5 rounded-xl bg-card border border-border"
+              >
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-foreground">{benefit}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -67,15 +116,23 @@ const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howIt
     {howItWorks && (
       <section className="py-20">
         <div className="container max-w-3xl">
-          <h2 className="text-3xl font-display font-bold text-foreground mb-10 text-center">How It Works</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-display font-bold text-foreground mb-10 text-center"
+          >
+            How It Works
+          </motion.h2>
           <div className="space-y-6">
             {howItWorks.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.12 }}
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border"
               >
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -96,9 +153,16 @@ const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howIt
     {testimonial && (
       <section className="py-20 bg-card/50 border-y border-border">
         <div className="container max-w-2xl text-center">
-          <blockquote className="text-xl text-foreground font-medium italic mb-6">"{testimonial.quote}"</blockquote>
-          <p className="text-primary font-semibold">{testimonial.name}</p>
-          <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
+          >
+            <blockquote className="text-xl text-foreground font-medium italic mb-6">"{testimonial.quote}"</blockquote>
+            <p className="text-primary font-semibold">{testimonial.name}</p>
+            <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+          </motion.div>
         </div>
       </section>
     )}
@@ -106,14 +170,21 @@ const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howIt
     {/* CTA */}
     <section className="py-20">
       <div className="container text-center">
-        <h2 className="text-3xl font-display font-bold text-foreground mb-4">Ready to Get Started?</h2>
-        <p className="text-muted-foreground mb-8">Book a free consultation to see how this service can transform your business.</p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          Book a Free Consultation <ArrowRight className="w-4 h-4" />
-        </Link>
+          <h2 className="text-3xl font-display font-bold text-foreground mb-4">Ready to Get Started?</h2>
+          <p className="text-muted-foreground mb-8">Book a free consultation to see how this service can transform your business.</p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+          >
+            Book a Free Consultation <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   </Layout>
