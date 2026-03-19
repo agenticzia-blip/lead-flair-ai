@@ -18,9 +18,10 @@ const About = () => (
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative"
           >
             <div className="rounded-2xl overflow-hidden border border-border shadow-lg max-w-sm mx-auto">
@@ -32,9 +33,10 @@ const About = () => (
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">Ziauddin Shah</h2>
@@ -58,10 +60,20 @@ const About = () => (
           description="Appoint Funnels was founded with a single mission: to help businesses leverage cutting-edge AI tools that automate and optimize customer acquisition processes."
         />
         <div className="max-w-3xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             We believe that every business, regardless of size, should have access to the same powerful AI tools that Fortune 500 companies use. Our suite of services — from lead reactivation to AI-powered appointment setting — are designed to eliminate manual bottlenecks and supercharge your sales pipeline.
           </motion.p>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+          <motion.p
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
             Our team of AI specialists, sales strategists, and engineers work together to build solutions that don't just automate — they optimize. We continuously refine our systems to deliver better results, more conversions, and higher ROI for our clients.
           </motion.p>
         </div>
@@ -72,22 +84,30 @@ const About = () => (
       <div className="container">
         <SectionHeading label="Our Values" title="What Drives Us" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, i) => (
-            <motion.div
-              key={v.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-xl bg-card border border-border text-center card-hover"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <v.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">{v.title}</h3>
-              <p className="text-sm text-muted-foreground">{v.desc}</p>
-            </motion.div>
-          ))}
+          {values.map((v, i) => {
+            const directions = [
+              { x: -30, y: 0 },
+              { x: 0, y: 30 },
+              { x: 0, y: 30 },
+              { x: 30, y: 0 },
+            ];
+            return (
+              <motion.div
+                key={v.title}
+                initial={{ opacity: 0, ...directions[i] }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="p-6 rounded-xl bg-card border border-border text-center card-hover"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <v.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">{v.title}</h3>
+                <p className="text-sm text-muted-foreground">{v.desc}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

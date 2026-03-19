@@ -58,19 +58,34 @@ const Index = () => {
       <section className="relative overflow-hidden hero-bg">
         <div className="container relative z-10 py-16 md:py-24 lg:py-28">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] tracking-tight mb-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] tracking-tight mb-6"
+            >
               Scale Your Business with<br />
               AI-Driven Funnels
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-base md:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto"
+            >
               Leverage AI to streamline your processes, automate outreach, and drive exponential growth without increasing headcount.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity text-center"
@@ -83,7 +98,7 @@ const Index = () => {
               >
                 Watch Demo
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -91,12 +106,27 @@ const Index = () => {
       {/* Trusted By */}
       <section className="border-y border-border">
         <div className="container py-10">
-          <p className="text-center text-xs font-semibold tracking-widest uppercase text-primary mb-6">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-xs font-semibold tracking-widest uppercase text-primary mb-6"
+          >
             Trusted by Innovative Companies
-          </p>
+          </motion.p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-muted-foreground">
-            {["ZAPIER", "BOLT", "STACKBLITZ", "TOPVIEW AI", "BASE44", "LOVABLE"].map((name) => (
-              <span key={name} className="text-sm font-semibold tracking-wider opacity-50">{name}</span>
+            {["ZAPIER", "BOLT", "STACKBLITZ", "TOPVIEW AI", "BASE44", "LOVABLE"].map((name, i) => (
+              <motion.span
+                key={name}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 0.5, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="text-sm font-semibold tracking-wider"
+              >
+                {name}
+              </motion.span>
             ))}
           </div>
         </div>
@@ -109,10 +139,10 @@ const Index = () => {
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.12, type: "spring", stiffness: 100 }}
                 className="text-center"
               >
                 <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">{stat.value}</div>
@@ -152,22 +182,29 @@ const Index = () => {
               { icon: Zap, title: "Lightning Fast", desc: "Respond to leads in seconds, not hours. AI never sleeps." },
               { icon: Shield, title: "Consistent Quality", desc: "Every interaction follows your best practices, every time." },
               { icon: TrendingUp, title: "Scalable Growth", desc: "Handle 10 or 10,000 leads without hiring more staff." },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-card border border-border text-center"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </motion.div>
-            ))}
+            ].map((item, i) => {
+              const directions = [
+                { x: -40, y: 0 },
+                { x: 0, y: 40 },
+                { x: 40, y: 0 },
+              ];
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, ...directions[i] }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.15 }}
+                  className="p-6 rounded-xl bg-card border border-border text-center"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -176,9 +213,10 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
             className="max-w-3xl mx-auto text-center p-12 rounded-2xl border border-primary/20 glow-border bg-card"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">

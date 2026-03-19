@@ -53,32 +53,41 @@ const Blog = () => (
           description="Stay ahead of the curve with our latest articles, case studies, and guides on AI-powered business growth."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {posts.map((post, i) => (
-            <motion.article
-              key={post.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="p-6 rounded-xl bg-card border border-border card-hover group cursor-pointer"
-            >
-              <span className="inline-block px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary mb-3">
-                {post.category}
-              </span>
-              <h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {post.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{post.excerpt}</p>
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Calendar className="w-3 h-3" /> {post.date}
+          {posts.map((post, i) => {
+            // Alternate animations: from-left, from-bottom, from-right pattern
+            const directions = [
+              { x: -30, y: 0 },
+              { x: 0, y: 30 },
+              { x: 30, y: 0 },
+            ];
+            const dir = directions[i % 3];
+            return (
+              <motion.article
+                key={post.title}
+                initial={{ opacity: 0, ...dir }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="p-6 rounded-xl bg-card border border-border card-hover group cursor-pointer"
+              >
+                <span className="inline-block px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary mb-3">
+                  {post.category}
                 </span>
-                <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                  Read <ArrowRight className="w-3 h-3" />
-                </span>
-              </div>
-            </motion.article>
-          ))}
+                <h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{post.excerpt}</p>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <Calendar className="w-3 h-3" /> {post.date}
+                  </span>
+                  <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    Read <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>
