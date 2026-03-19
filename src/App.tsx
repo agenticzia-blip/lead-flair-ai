@@ -13,6 +13,7 @@ import LeadReactivation from "./pages/services/LeadReactivation";
 import ColdCalling from "./pages/services/ColdCalling";
 import Receptionist from "./pages/services/Receptionist";
 import AppointmentSetters from "./pages/services/AppointmentSetters";
+import SalesSystem from "./pages/services/SalesSystem";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/services/cold-calling" element={<ColdCalling />} />
           <Route path="/services/receptionist" element={<Receptionist />} />
           <Route path="/services/appointment-setters" element={<AppointmentSetters />} />
+          <Route path="/services/sales-system" element={<SalesSystem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

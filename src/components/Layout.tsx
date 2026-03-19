@@ -9,6 +9,7 @@ const serviceLinks = [
   { label: "AI Cold Calling", path: "/services/cold-calling" },
   { label: "AI Receptionist", path: "/services/receptionist" },
   { label: "AI Appointment Setters", path: "/services/appointment-setters" },
+  { label: "AI Sales System", path: "/services/sales-system" },
 ];
 
 const navLinks = [
@@ -139,6 +140,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li><Link to="/services/cold-calling" className="hover:text-primary transition-colors">AI Cold Calling</Link></li>
                 <li><Link to="/services/receptionist" className="hover:text-primary transition-colors">AI Receptionist</Link></li>
                 <li><Link to="/services/appointment-setters" className="hover:text-primary transition-colors">AI Appointment Setters</Link></li>
+                <li><Link to="/services/sales-system" className="hover:text-primary transition-colors">AI Sales System</Link></li>
               </ul>
             </div>
 

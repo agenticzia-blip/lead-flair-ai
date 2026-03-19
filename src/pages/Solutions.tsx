@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Building, ShoppingCart, Briefcase } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Building, ShoppingCart, Briefcase } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -10,6 +10,7 @@ const services = [
   { icon: Phone, title: "AI Cold Calling", description: "Automated outreach that books meetings while you sleep.", link: "/services/cold-calling" },
   { icon: UserCheck, title: "AI Receptionist", description: "24/7 call handling, scheduling, and inquiry management.", link: "/services/receptionist" },
   { icon: CalendarCheck, title: "AI Appointment Setters", description: "Never miss a booking with intelligent AI scheduling.", link: "/services/appointment-setters" },
+  { icon: Target, title: "AI Sales System", description: "Scrape, personalize, verify, and launch outbound campaigns on autopilot.", link: "/services/sales-system" },
 ];
 
 const useCases = [
