@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Building, ShoppingCart, Briefcase } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Building, ShoppingCart, Briefcase } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
