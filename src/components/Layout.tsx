@@ -142,6 +142,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li><Link to="/services/receptionist" className="hover:text-primary transition-colors">AI Receptionist</Link></li>
                 <li><Link to="/services/appointment-setters" className="hover:text-primary transition-colors">AI Appointment Setters</Link></li>
                 <li><Link to="/services/sales-system" className="hover:text-primary transition-colors">AI Sales System</Link></li>
+                <li><Link to="/services/ads-appointment-setters" className="hover:text-primary transition-colors">Ads + AI Appointment Setter</Link></li>
               </ul>
             </div>
 

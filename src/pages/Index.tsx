@@ -36,6 +36,12 @@ const services = [
     description: "End-to-end outbound engine — scrape leads, personalize outreach, verify data, and launch campaigns automatically.",
     link: "/services/sales-system",
   },
+  {
+    icon: Megaphone,
+    title: "Ads + AI Appointment Setter",
+    description: "Run targeted ads and let AI instantly qualify leads and book appointments into your calendar.",
+    link: "/services/ads-appointment-setters",
+  },
 ];
 
 const stats = [
