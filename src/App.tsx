@@ -14,6 +14,7 @@ import ColdCalling from "./pages/services/ColdCalling";
 import Receptionist from "./pages/services/Receptionist";
 import AppointmentSetters from "./pages/services/AppointmentSetters";
 import SalesSystem from "./pages/services/SalesSystem";
+import AdsAppointmentSetters from "./pages/services/AdsAppointmentSetters";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
