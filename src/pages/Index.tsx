@@ -5,6 +5,13 @@ import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shi
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import ServiceCard from "@/components/ServiceCard";
 
 const services = [
   {
