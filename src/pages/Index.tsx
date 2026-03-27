@@ -74,10 +74,11 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] tracking-tight mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight mb-6"
             >
-              Scale Your Business with<br />
-              AI-Driven Funnels
+              <span className="text-foreground">Scale Your Business</span><br />
+              <span className="text-muted-foreground/60">with AI-Driven</span><br />
+              <span className="text-muted-foreground/60">Funnels.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
