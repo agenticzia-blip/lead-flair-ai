@@ -77,7 +77,7 @@
   }
 
   .glow-border {
-    box-shadow: 0 1px 3px hsl(0 0% 0% / 0.08), 0 0 0 1px hsl(220 10% 90%);
+    box-shadow: 0 1px 3px hsl(270 50% 40% / 0.08), 0 0 0 1px hsl(300 20% 85%);
   }
 
   .card-hover {
