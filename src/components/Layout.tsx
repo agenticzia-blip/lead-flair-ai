@@ -31,8 +31,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-xl">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-1 -ml-4 md:ml-0">
-            <img src={logoIcon} alt="Appoint Funnels" className="h-20 w-20" />
+          <Link to="/" className="flex items-center gap-1">
+            <img src={logoIcon} alt="Appoint Funnels" className="h-20 w-20 -mr-1" />
             <span className="text-lg font-display font-bold text-gradient">Appoint Funnels</span>
           </Link>
 
@@ -70,7 +70,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             )}
             <Link
               to="/contact"
-              className="px-4 py-2 rounded-md text-sm font-medium bg-logo-purple text-white hover:opacity-90 transition-opacity"
+              className="px-4 py-2 rounded-md text-sm font-medium bg-logo-blue text-white hover:opacity-90 transition-opacity"
             >
               Get Started
             </Link>

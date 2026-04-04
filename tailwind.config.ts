@@ -43,8 +43,7 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        "logo-blue": "hsl(270 46% 19%)",
-        "logo-purple": "hsl(270 50% 40%)",
+        "logo-blue": "hsl(210 80% 45%)",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
