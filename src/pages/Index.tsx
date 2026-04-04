@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 
