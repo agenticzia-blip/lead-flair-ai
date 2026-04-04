@@ -153,6 +153,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                 <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
                 <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+                <li><Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
               </ul>
             </div>
