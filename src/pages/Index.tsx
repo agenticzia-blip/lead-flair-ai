@@ -215,6 +215,57 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 md:py-28">
+        <div className="container max-w-3xl">
+          <SectionHeading
+            label="FAQ"
+            title="Frequently Asked Questions"
+            description="Quick answers to the most common questions about our AI-powered services."
+          />
+          <Accordion type="single" collapsible className="space-y-4">
+            {[
+              { q: "What is Appoint Funnels?", a: "Appoint Funnels is an AI-powered sales automation agency. We help businesses automate lead generation, appointment setting, cold calling, and full outbound sales campaigns using cutting-edge AI." },
+              { q: "How quickly can I see results?", a: "Most clients start seeing qualified leads and booked appointments within the first 1–2 weeks. Our AI systems work 24/7, so results compound quickly." },
+              { q: "Do I need technical knowledge?", a: "Not at all. We handle setup, integration, and optimization. You define your ideal customer and we take care of the rest." },
+              { q: "How does the AI Sales System work?", a: "It scrapes decision-makers, verifies contacts, crafts personalized cold emails, and launches automated campaigns — continuously optimizing based on engagement data." },
+              { q: "Can I cancel or change my plan?", a: "Yes, plans are flexible. Upgrade, downgrade, or cancel anytime. No long-term contracts." },
+            ].map((faq, i) => {
+              const dirs = [{ x: -30, y: 0 }, { x: 30, y: 0 }, { x: 0, y: 30 }];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, ...dirs[i % 3] }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <AccordionItem value={`home-faq-${i}`} className="rounded-xl border border-border bg-card px-6">
+                    <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              );
+            })}
+          </Accordion>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center mt-8"
+          >
+            <Link to="/faq" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all">
+              View all FAQs <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 md:py-28">
         <div className="container">
