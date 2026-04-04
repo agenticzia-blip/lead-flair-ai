@@ -5,14 +5,14 @@ const SalesSystem = () => (
   <ServicePage
     icon={Target}
     title="AI Sales System"
-    subtitle="Scrape, personalize, verify, and launch — an end-to-end AI-powered outbound sales engine that fills your pipeline on autopilot."
-    description="Our AI Sales System automates the entire outbound sales process. It scrapes targeted leads from multiple sources, builds hyper-personalized outreach sequences for each prospect, verifies contact data to ensure deliverability, and launches multi-channel campaigns — all without lifting a finger. The system continuously learns from engagement data to optimize messaging and targeting for maximum conversions."
+    subtitle="Scrape decision-makers, personalize cold emails, verify contacts, and launch campaigns — your complete AI-powered cold email outbound engine."
+    description="Our AI Sales System is a full cold emailing engine built for B2B outbound. It scrapes decision-makers from your target market, verifies every email to ensure deliverability, crafts hyper-personalized cold emails tailored to each prospect's role and company, and launches automated campaigns at scale. The system continuously learns from open rates, replies, and engagement data to optimize subject lines, messaging, and targeting for maximum conversions."
     benefits={[
-      "Automated lead scraping from multiple data sources",
-      "AI-powered personalization for every prospect",
-      "Built-in email and phone verification to ensure data quality",
-      "Multi-channel campaign launch (email, SMS, LinkedIn)",
-      "Real-time analytics and campaign performance tracking",
+      "Scrape decision-makers from LinkedIn, Apollo, and other sources",
+      "AI-powered email personalization for every prospect",
+      "Built-in email verification to ensure deliverability",
+      "Automated cold email campaign launch with smart follow-ups",
+      "Real-time analytics — opens, clicks, replies, and conversions",
       "Continuous optimization through AI learning loops",
     ]}
     howItWorks={[
