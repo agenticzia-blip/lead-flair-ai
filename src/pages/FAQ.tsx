@@ -75,7 +75,7 @@ const FAQ = () => (
         >
           <SectionHeading
             title="Frequently Asked Questions"
-            subtitle="Everything you need to know about our AI-powered services and how they can transform your business."
+            description="Everything you need to know about our AI-powered services and how they can transform your business."
           />
         </motion.div>
       </div>

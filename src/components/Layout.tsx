@@ -19,6 +19,7 @@ const navLinks = [
   { label: "Services", path: "/solutions", hasDropdown: true },
   { label: "Pricing", path: "/pricing" },
   { label: "Blog", path: "/blog" },
+  { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
 ];
 
