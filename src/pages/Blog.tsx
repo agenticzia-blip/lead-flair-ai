@@ -6,6 +6,12 @@ import SectionHeading from "@/components/SectionHeading";
 
 const posts = [
   {
+    title: "Why AI Receptionists Are the Future of Customer Service",
+    excerpt: "AI receptionists handle calls 24/7 with zero wait times, consistent quality, and instant responses — giving your business an always-on front desk.",
+    date: "Mar 5, 2026",
+    category: "AI Receptionist",
+  },
+  {
     title: "How AI is Revolutionizing Lead Generation in 2026",
     excerpt: "Discover the latest AI-driven strategies that are transforming how businesses find and convert leads.",
     date: "Feb 28, 2026",
