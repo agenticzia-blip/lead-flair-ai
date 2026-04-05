@@ -37,7 +37,7 @@ const services = [
     link: "/services/appointment-setters",
   },
   {
-    icon: Target,
+    icon: Mail,
     title: "AI Sales System",
     description: "End-to-end outbound engine — scrape leads, personalize outreach, verify data, and launch campaigns automatically.",
     link: "/services/sales-system",

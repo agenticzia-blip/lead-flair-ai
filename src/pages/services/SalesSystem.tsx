@@ -1,4 +1,4 @@
-import { Target } from "lucide-react";
+import { Mail } from "lucide-react";
 import ServicePage from "@/pages/ServicePage";
 
 const SalesSystem = () => (
