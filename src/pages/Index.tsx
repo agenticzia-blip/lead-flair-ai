@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Mail, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Mail, Megaphone, Zap, Shield, TrendingUp, ArrowRight, Search, CheckCircle, BarChart3, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import {
   Accordion,
@@ -212,6 +212,79 @@ const Index = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* AI Sales System Overview */}
+      <section className="py-20 md:py-28 bg-muted/50 border-y border-border">
+        <div className="container">
+          <SectionHeading
+            label="Featured System"
+            title="AI Sales System — Your Cold Email Outbound Engine"
+            description="A complete end-to-end system that finds decision-makers, verifies their contacts, personalizes every email, and launches campaigns on autopilot."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { icon: Search, title: "Scrape Decision-Makers", desc: "AI finds prospects from LinkedIn, Apollo, and other sources matching your ideal customer profile.", dir: { x: -40, y: 0 } },
+              { icon: CheckCircle, title: "Verify Every Lead", desc: "Built-in email verification ensures deliverability and protects your sender reputation.", dir: { x: 0, y: 40 } },
+              { icon: Mail, title: "Personalize at Scale", desc: "AI crafts unique, hyper-personalized cold emails tailored to each prospect's role and company.", dir: { x: 0, y: -40 } },
+              { icon: Send, title: "Launch & Optimize", desc: "Automated campaigns go live with smart follow-ups, A/B testing, and continuous AI optimization.", dir: { x: 40, y: 0 } },
+            ].map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, ...step.dir }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.12 }}
+                className="relative p-6 rounded-xl bg-card border border-border text-center"
+              >
+                <div className="text-xs font-bold text-primary mb-3">STEP {i + 1}</div>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: BarChart3, value: "150+", label: "Qualified leads in first month", dir: { x: -30, y: 0 } },
+              { icon: TrendingUp, value: "40%", label: "Average open rate on cold emails", dir: { x: 0, y: 30 } },
+              { icon: Zap, value: "10x", label: "Faster than manual outbound", dir: { x: 30, y: 0 } },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, ...stat.dir }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <stat.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-2xl font-display font-bold text-foreground">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center"
+          >
+            <Link
+              to="/services/sales-system"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              Learn More About the AI Sales System <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
