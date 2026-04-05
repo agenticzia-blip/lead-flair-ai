@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Mail, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import {
   Accordion,
