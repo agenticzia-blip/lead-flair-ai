@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Phone, UserCheck, CalendarCheck, RefreshCw, Mail, Megaphone, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import {
   Accordion,
@@ -37,7 +37,7 @@ const services = [
     link: "/services/appointment-setters",
   },
   {
-    icon: Target,
+    icon: Mail,
     title: "AI Sales System",
     description: "End-to-end outbound engine — scrape leads, personalize outreach, verify data, and launch campaigns automatically.",
     link: "/services/sales-system",

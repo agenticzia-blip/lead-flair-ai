@@ -1,9 +1,9 @@
-import { Target } from "lucide-react";
+import { Mail } from "lucide-react";
 import ServicePage from "@/pages/ServicePage";
 
 const SalesSystem = () => (
   <ServicePage
-    icon={Target}
+    icon={Mail}
     title="AI Sales System"
     subtitle="Scrape decision-makers, personalize cold emails, verify contacts, and launch campaigns — your complete AI-powered cold email outbound engine."
     description="Our AI Sales System is a full cold emailing engine built for B2B outbound. It scrapes decision-makers from your target market, verifies every email to ensure deliverability, crafts hyper-personalized cold emails tailored to each prospect's role and company, and launches automated campaigns at scale. The system continuously learns from open rates, replies, and engagement data to optimize subject lines, messaging, and targeting for maximum conversions."
