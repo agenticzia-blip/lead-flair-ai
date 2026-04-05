@@ -15,8 +15,9 @@ import Receptionist from "./pages/services/Receptionist";
 import AppointmentSetters from "./pages/services/AppointmentSetters";
 import SalesSystem from "./pages/services/SalesSystem";
 import AdsAppointmentSetters from "./pages/services/AdsAppointmentSetters";
-import FAQ from "./pages/FAQ";
+import BookCall from "./pages/BookCall";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -33,7 +35,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="/book-call" element={<BookCall />} />
           <Route path="/services/lead-reactivation" element={<LeadReactivation />} />
           <Route path="/services/cold-calling" element={<ColdCalling />} />
           <Route path="/services/receptionist" element={<Receptionist />} />
