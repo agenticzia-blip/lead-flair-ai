@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const posts = [
   {
@@ -51,6 +52,11 @@ const posts = [
 
 const Blog = () => (
   <Layout>
+    <SEO
+      title="Blog & Resources | Appoint Funnels AI Insights"
+      description="AI insights, case studies, and guides on lead generation, cold calling, AI receptionists, and sales automation from Appoint Funnels."
+      canonical="https://appointfunnels.com/blog"
+    />
     <section className="py-20 md:py-28">
       <div className="container">
         <SectionHeading

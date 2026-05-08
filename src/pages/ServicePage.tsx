@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, type LucideIcon } from "lucide-react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 interface ServicePageProps {
   icon: LucideIcon;
@@ -15,6 +16,10 @@ interface ServicePageProps {
 
 const ServicePage = ({ icon: Icon, title, subtitle, description, benefits, howItWorks, testimonial }: ServicePageProps) => (
   <Layout>
+    <SEO
+      title={`${title} | Appoint Funnels`}
+      description={subtitle}
+    />
     {/* Hero */}
     <section className="py-20 md:py-28 hero-bg">
       <div className="container">

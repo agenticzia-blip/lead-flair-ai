@@ -2,9 +2,15 @@ import { motion } from "framer-motion";
 import Cal from "@calcom/embed-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const BookCall = () => (
   <Layout>
+    <SEO
+      title="Book a Free AI Strategy Call | Appoint Funnels"
+      description="Schedule a free 30-minute consultation with Appoint Funnels. Discover how our AI sales systems can scale your business."
+      canonical="https://appointfunnels.com/book-call"
+    />
     <section className="py-20 md:py-28">
       <div className="container">
         <motion.div
