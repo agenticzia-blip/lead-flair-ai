@@ -13,6 +13,11 @@ const values = [
 
 const About = () => (
   <Layout>
+    <SEO
+      title="About Appoint Funnels | AI Automation Agency Founded by Ziauddin Shah"
+      description="Learn about Appoint Funnels — an AI automation agency helping businesses scale with AI sales systems, AI receptionists, and appointment setters. Founded by CEO Ziauddin Shah."
+      canonical="https://appointfunnels.com/about"
+    />
     {/* CEO Section */}
     <section className="py-20 md:py-28">
       <div className="container">

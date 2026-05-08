@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import SEO from "@/components/SEO";
 
 const services = [
   {
@@ -60,6 +61,11 @@ const stats = [
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="Appoint Funnels | AI Sales Systems & Appointment Automation Agency"
+        description="Scale your B2B business with AI-powered sales systems, cold calling, AI receptionists, and appointment setters. Appoint Funnels is the AI automation agency for modern outbound."
+        canonical="https://appointfunnels.com/"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden hero-bg">
         <div className="container relative z-10 py-16 md:py-24 lg:py-28">
