@@ -4,6 +4,7 @@ import { Phone, UserCheck, CalendarCheck, RefreshCw, Target, Megaphone, Building
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import SEO from "@/components/SEO";
 
 const services = [
   { icon: RefreshCw, title: "AI Lead Reactivation", description: "Revive old leads with personalized AI-driven automation.", link: "/services/lead-reactivation" },
@@ -22,6 +23,11 @@ const useCases = [
 
 const Solutions = () => (
   <Layout>
+    <SEO
+      title="AI Solutions & Services | Appoint Funnels"
+      description="Explore Appoint Funnels' AI solutions: AI Sales System, AI Cold Calling, AI Receptionist, AI Appointment Setters, Lead Reactivation, and Ads + AI Appointment Setter."
+      canonical="https://appointfunnels.com/solutions"
+    />
     <section className="py-20 md:py-28">
       <div className="container">
         <SectionHeading

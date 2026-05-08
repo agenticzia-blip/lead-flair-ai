@@ -5,6 +5,7 @@ import Cal from "@calcom/embed-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,6 +19,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Appoint Funnels | Book a Free AI Strategy Call"
+        description="Get in touch with Appoint Funnels. Book a free consultation, ask about our AI sales systems, or schedule a strategy call."
+        canonical="https://appointfunnels.com/contact"
+      />
       <section className="py-20 md:py-28">
         <div className="container">
           <SectionHeading

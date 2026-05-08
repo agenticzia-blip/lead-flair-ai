@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 
 const plans = [
   {
@@ -54,6 +55,11 @@ const plans = [
 
 const Pricing = () => (
   <Layout>
+    <SEO
+      title="Pricing & Packages | Appoint Funnels AI Automation"
+      description="Transparent pricing for Appoint Funnels AI services — Starter, Growth, and Elite packages including website design, AI chatbot, lifetime hosting, and more."
+      canonical="https://appointfunnels.com/pricing"
+    />
     <section className="py-20 md:py-28">
       <div className="container">
         <SectionHeading
